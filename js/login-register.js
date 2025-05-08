@@ -30,7 +30,10 @@ function showError(fieldId, message) {
 }
 
 function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  return string
+    .split(" ")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
 }
 
 function validateNameOnBlur(fieldId, errorMessage) {
@@ -39,10 +42,13 @@ function validateNameOnBlur(fieldId, errorMessage) {
     const value = field.value.trim();
     if (!value) {
       showError(fieldId, errorMessage);
-    } else if (value !== capitalizeFirstLetter(value)) {
-      showError(fieldId, "Chữ cái đầu phải viết hoa");
     } else {
-      document.getElementById(`${fieldId}-error`).style.display = "none";
+      const capitalized = capitalizeFirstLetter(value);
+      if (value !== capitalized) {
+        showError(fieldId, "Mỗi từ phải bắt đầu bằng chữ hoa.");
+      } else {
+        document.getElementById(`${fieldId}-error`).style.display = "none";
+      }
     }
   });
 }
