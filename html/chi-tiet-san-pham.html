@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/chi-tiet-san-pham.css">
+    <title>Trang chi tiết sản phẩm</title>
+  </head>
+  <body>
+    <!-- infor -->
+    <div class="infor">
+      <div class="inner-wrap p-1">
+        <div class="container">
+          <div class="d-flex gap-5 justify-content-between">
+            <div class="tel">
+              <i class="fa-solid fa-phone-volume p-2"></i>
+              <label for="" class="fw-bold">Hotline:</label>
+              <a href="tel:1900 3355" class="tel text-light">1900 3355</a>
+            </div>
+            <div class="address d-flex">
+              <div>
+                <i class="fa-solid fa-location-dot me-1"></i
+                ><b> Địa chỉ:539/8 Hương Lộ 3,phường Bình Hưng Hòa,Quận Bình Tân</b>
+              </div>
+            </div>
+            <div class="title">
+              <i class="fa-solid fa-truck"></i> Giao hàng nhanh chóng và miễn phí
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End infor -->
+
+     <!-- header -->
+  <header class="header pt-1 pb-1">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="../index.html">
+        <img src="../img/logo.png" alt="" class="img" width="250px" />
+      </a>
+      <nav class="navbar">
+        <ul
+          class="header-menu d-flex gap-4 fs-5 pt-2 ms-3 me-5"
+          style="z-index: 99"
+        >
+          <li>
+            <a href="../index.html">Trang chủ</a>
+          </li>
+          <li>
+            <a href="san-pham.html">Sản phẩm</a>
+            <ul>
+              <li>
+                <a href="san-pham.html"> Dinh dưỡng cho mẹ bầu </a>
+                <ul>
+                  <li>
+                    <a href="#!">ColosBaby Gold For Mum</a>
+                  </li>
+                  <li>
+                    <a href="#!">Oggi Mum</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="san-pham.html"> Dinh dưỡng cho bé</a>
+                <ul>
+                  <li><a href="#!">ColosBaby</a></li>
+                  <li><a href="#!">ColosGain</a></li>
+                  <li><a href="#!">Oggi</a></li>
+                  <li><a href="#!">Colos DHA+</a></li>
+                  <li><a href="#!">Colos Opti</a></li>
+                  <li><a href="#!">Calokid Gold</a></li>
+                  <li><a href="#!">VitaGrow</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="san-pham.html">Dinh dưỡng cho người lớn tuổi </a>
+                <ul>
+                  <li><a href="#!">Calosure America</a></li>
+                  <li><a href="#!">Calosure</a></li>
+                  <li><a href="#!">Nepro</a></li>
+                  <li><a href="#!">Gluvita</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="san-pham.html"> Sữa tươi </a>
+                <ul>
+                  <li><a href="#!">VitaDairy Colos Fresh Milk</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="san-pham.html"> Sản phẩm tăng cường miễn dịch dùng kèm</a>
+                <ul>
+                  <li><a href="#!">ColoslgG 24h</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#!">Bài viết</a>
+            <ul>
+              <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+              <li><a href="gioi-thieu.html">Blog</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#!">Liên hệ</a>
+          </li>
+        </ul>
+      </nav>
+      <form action="#!" class="d-flex align-items-center search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input
+          type="text"
+          name="keyword"
+          placeholder="Tìm kiếm sản phẩm..."
+        />
+      </form>
+      <a id="auth-link" href="login-register.html">
+        <button
+          class="button btn-outline-success rounded-pill px-3 py-1"
+        >
+          <i class="fa-solid fa-user me-2"></i>Login / Sign Up
+        </button>
+      </a>
+      
+      <a href="gio-hang.html">
+        <i class="fa-solid fa-cart-plus fs-2" style="color: #007bff"></i>
+      </a>
+    </div>
+  </header>
+  <!-- End header -->
+
+    <!-- product detail -->
+    <section class="product-detail my-5">
+      <div class="container">
+        <div class="row">
+          <!-- Hình ảnh sản phẩm -->
+          <div class="col-md-6">
+            <img
+              src="img/colosbaby-gold-0-800g.webp"
+              alt="Sữa bột ColosBaby Gold 0+ 800g"
+              class="img-fluid rounded"
+              id="main-image"
+            />
+            <div class="mt-3 d-flex gap-2">
+              <img
+                src="img/colosbaby-gold-0-800g.webp"
+                alt="Sữa bột ColosBaby Gold 0+ 800g"
+                class="img-thumbnail"
+                style="width: 80px; height: 80px"
+              />
+              <img
+                src="img/colosbaby-gold-0-800g-front.webp"
+                alt="Sữa bột ColosBaby Gold 0+ 800g - Mặt trước"
+                class="img-thumbnail"
+                style="width: 80px; height: 80px"
+              />
+              <img
+                src="img/colosbaby-gold-0-800g-back.webp"
+                alt="Sữa bột ColosBaby Gold 0+ 800g - Mặt sau"
+                class="img-thumbnail"
+                style="width: 80px; height: 80px"
+              />
+            </div>
+          </div>
+
+          <!-- Thông tin sản phẩm -->
+          <div class="col-md-6">
+            <h2 class="fw-bold" id="product-title">Sữa bột ColosBaby Gold 0+ 800g</h2>
+            <p class="text-success fs-4 fw-bold" id="product-price">
+              Giá: 586,656₫
+            </p>
+            <p>Trạng thái: <span class="text-success">Còn hàng</span></p>
+            <p>Danh mục: <a href="san-pham.html" class="text-decoration-none">Dinh dưỡng cho bé</a></p>
+
+            <div class="my-3">
+              <label for="quantity" class="form-label fw-bold">Số lượng:</label>
+              <input
+                type="number"
+                id="quantity"
+                value="1"
+                min="1"
+                class="form-control w-25"
+              />
+            </div>
+
+            <div class="d-flex gap-3 mt-4">
+              <button class="btn btn-success px-4 py-2" id="add-to-cart">
+                <i class="fa-solid fa-cart-plus me-2"></i> Thêm vào giỏ
+              </button>
+              <button class="btn btn-outline-danger px-4 py-2">
+                <i class="fa-solid fa-heart me-2"></i> Yêu thích
+              </button>
+            </div>
+
+            <div class="mt-4">
+              <h5 class="fw-bold">Mô tả sản phẩm</h5>
+              <p id="product-description">
+                Sữa bột ColosBaby Gold 0+ 800g được thiết kế đặc biệt cho trẻ từ 0-12 tháng tuổi, hỗ trợ tăng cân và phát triển toàn diện. Sản phẩm chứa IgG từ Colostrum, giúp tăng cường miễn dịch, cùng với DHA và các dưỡng chất thiết yếu hỗ trợ trí não và thị lực.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chi tiết mô tả thêm -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <h4 class="fw-bold">Chi tiết sản phẩm</h4>
+            <p>- Xuất xứ: Việt Nam</p>
+            <p>- Quy cách đóng gói: Hộp 800g</p>
+            <p>- Bảo quản: Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp</p>
+            <p>- Thời gian sử dụng: 24 tháng kể từ ngày sản xuất</p>
+            <p>- Hướng dẫn sử dụng: Pha 5 muỗng gạt (tương đương 36g) với 180ml nước ấm (40-50°C), khuấy đều đến khi tan hoàn toàn</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end product detail -->
+
+    <div class="contact-buttons">
+      <a href="tel:+123456789" class="call-button"><i>📞</i> Gọi ngay</a>
+      <a href="#" class="chat-button"><i>💬</i> Chat với chúng tôi</a>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="inner-wrap">
+          <div class="inner-top">
+            <div class="inner-content">
+              đăng ký ngay để không bỏ lỡ các chương trình của chúng tôi
+            </div>
+
+            <form
+              class="inner-form"
+              action="#!"
+              method="post"
+              autocomplete="on"
+              target="_blank"
+            >
+              <label for="Email"></label>
+              <input
+                type="email"
+                id="Email"
+                placeholder="Nhập email của bạn..."
+              />
+              <button>Đăng ký ngay</button>
+            </form>
+          </div>
+
+          <div class="inner-middle">
+            <nav class="inner-link">
+              <ul>
+                <li>
+                  <a
+                    href="#!"
+                    target="_blank"
+                    class="fw-bold fs-5"
+                    style="color: white"
+                    >trang chủ</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="gioi-thieu.html"
+                    target="_blank"
+                    class="fw-bold fs-5"
+                    style="color: white"
+                    >giới thiệu</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#!"
+                    target="_blank"
+                    class="fw-bold fs-5"
+                    style="color: white"
+                    >danh mục</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="tel:03458458800"
+                    target="_blank"
+                    class="fw-bold fs-5"
+                    style="color: white"
+                    >liên hệ</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <nav class="inner-socials">
+              <ul>
+                <li>
+                  <a href="" target="_blank">
+                    <i class="fa-brands fa-facebook fs-2 text-primary"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="" target="_blank">
+                    <i class="fa-brands fa-twitter fs-2 text-primary"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="" target="_blank">
+                    <i class="fa-brands fa-instagram fs-2 text-warning"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="" target="_blank">
+                    <i class="fa-brands fa-youtube fs-2 text-danger"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="inner-bottom">
+            <a
+              href="email:phu100905@gmail.com"
+              class="inner-copyright"
+            >
+              @2025 - Bản quyền thuộc về HoKimPhu 
+            </a>
+            <div class="inner-logo">
+              <a href="../index.html">
+                <img src="../img/logo.png" alt="" />
+              </a>
+            </div>
+            <nav class="inner-link">
+              <ul>
+                <li>
+                  <a href="#!" style="color: white">Điều khoảng dịch vụ</a>
+                </li>
+                <li>
+                  <a href="#!" style="color: white">Chính sách bảo mật</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/chi-tiet-sam-pham.js"></script>
+    
+  </body>
+</html>

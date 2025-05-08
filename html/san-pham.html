@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/san-pham.css">
+    <title>Trang Sản Phẩm</title>
+    <style>
+      /* CSS cho popup */
+      .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+      .popup-content {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        max-width: 400px;
+        width: 90%;
+      }
+      .popup-content h3 {
+        margin-bottom: 15px;
+        color: #006400;
+      }
+      .popup-content p {
+        margin-bottom: 20px;
+      }
+      .popup-content button {
+        background: #006400;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .popup-content button:hover {
+        background: #004d00;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- infor -->
+    <div class="infor">
+      <div class="inner-wrap p-1">
+        <div class="container">
+          <div class="d-flex gap-5 justify-content-between">
+            <div class="tel">
+              <i class="fa-solid fa-phone-volume p-2"></i>
+              <label for="" class="fw-bold">Hotline:</label>
+              <a href="tel:1900 3355" class="tel text-light">1900 3355</a>
+            </div>
+            <div class="address d-flex">
+              <div>
+                <i class="fa-solid fa-location-dot me-1"></i
+                ><b> Địa chỉ:539/8 Hương Lộ 3,phường Bình Hưng Hòa,Quận Bình Tân</b>
+              </div>
+            </div>
+            <div class="title">
+              <i class="fa-solid fa-truck"></i> Giao hàng nhanh chóng và miễn phí
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End infor -->
+
+  <!-- header -->
+  <header class="header pt-1 pb-1">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="../index.html">
+        <img src="../img/logo.png" alt="" class="img" width="250px" />
+      </a>
+      <nav class="navbar">
+        <ul
+          class="header-menu d-flex gap-4 fs-5 pt-2 ms-3 me-5"
+          style="z-index: 99"
+        >
+          <li>
+            <a href="../index.html">Trang chủ</a>
+          </li>
+          <li>
+            <a href="san-pham.html">Sản phẩm</a>
+            <ul>
+              <li>
+                <a href="san-pham.html"> Dinh dưỡng cho mẹ bầu </a>
+                <ul>
+                  <li>
+                    <a href="#!">ColosBaby Gold For Mum</a>
+                  </li>
+                  <li>
+                    <a href="#!">Oggi Mum</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="san-pham.html"> Dinh dưỡng cho bé</a>
+                <ul>
+                  <li><a href="#!">ColosBaby</a></li>
+                  <li><a href="#!">ColosGain</a></li>
+                  <li><a href="#!">Oggi</a></li>
+                  <li><a href="#!">Colos DHA+</a></li>
+                  <li><a href="#!">Colos Opti</a></li>
+                  <li><a href="#!">Calokid Gold</a></li>
+                  <li><a href="#!">VitaGrow</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="san-pham.html">Dinh dưỡng cho người lớn tuổi </a>
+                <ul>
+                  <li><a href="#!">Calosure America</a></li>
+                  <li><a href="#!">Calosure</a></li>
+                  <li><a href="#!">Nepro</a></li>
+                  <li><a href="#!">Gluvita</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="san-pham.html"> Sữa tươi </a>
+                <ul>
+                  <li><a href="#!">VitaDairy Colos Fresh Milk</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="san-pham.html"> Sản phẩm tăng cường miễn dịch dùng kèm</a>
+                <ul>
+                  <li><a href="#!">ColoslgG 24h</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#!">Bài viết</a>
+            <ul>
+              <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+              <li><a href="gioi-thieu.html">Blog</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#!">Liên hệ</a>
+          </li>
+        </ul>
+      </nav>
+      <form action="#!" class="d-flex align-items-center search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input
+          type="text"
+          name="keyword"
+          placeholder="Tìm kiếm sản phẩm..."
+        />
+      </form>
+      <a id="auth-link" href="login-register.html">
+        <button
+          class="button btn-outline-success rounded-pill px-3 py-1"
+        >
+          <i class="fa-solid fa-user me-2"></i>Login / Sign Up
+        </button>
+      </a>
+      
+      <a href="gio-hang.html">
+        <i class="fa-solid fa-cart-plus fs-2" style="color: #007bff"></i>
+      </a>
+    </div>
+  </header>
+  <!-- End header -->
+
+
+    <!-- Breadcrumb -->
+    <div class="title">
+      <div class="container fs-4 fw-bold pt-3">
+        Trang chủ >
+        <a href="san-pham.html" style="color: #37618e">Trang Sản Phẩm</a>
+      </div>
+    </div>
+
+    <!-- Product Section - 1 -->
+  <!-- Product Section - 1 -->
+<section class="section-1 mb-5">
+  <div class="container">
+    <div class="button-container pt-2 pb-1">
+      <button class="custom-button mt-2">
+        Dinh dưỡng cho bé
+      </button>
+    </div>
+    <div class="title fs-2">
+      ColosBaby
+    </div>
+    <div class="list-item">
+      <div class="row">
+        <div class="col-md-3">
+          <div
+            class="card"
+            data-title="Sữa bột ColosBaby Gold 0+ 800g"
+            data-price="586,656₫"
+            data-image="../img/colosbaby-gold-0-800g.webp"
+            data-description="Sữa bột ColosBaby Gold 0+ 800g, hỗ trợ tăng cân cho bé"
+          >
+            <a
+              href="chi-tiet-san-pham.html?title=Sữa bột ColosBaby Gold 0+ 800g&price=586,656₫&image=../img/colosbaby-gold-0-800g.webp&description=Sữa bột ColosBaby Gold 0+ 800g, hỗ trợ tăng cân cho bé"
+            >
+              <div class="card-img-container">
+                <img
+                  src="../img/colosbaby-gold-0-800g.webp"
+                  class="card-img-top"
+                  alt="Sữa bột ColosBaby Gold 0+ 800g"
+                />
+              </div>
+            </a>
+            <div class="card-body">
+              <h5 class="title">Sữa bột ColosBaby Gold 0+ 800g</h5>
+              <p class="hl fw-bold">586,656₫</p>
+              <span class="time-giao">Giao trong 2 giờ</span>
+              <div class="d-flex justify-content-between">
+                <a href="#" class="custom-button add-to-cart">Thêm vào giỏ</a>
+                <a href="#" class="buy-now-button">Mua Ngay</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div
+            class="card"
+            data-title="SPDD công thức ColosBaby Gold 0+ 800g (Mới)"
+            data-price="615,924₫"
+            data-image="../img/colosbaby-gold-0-800g-new.webp"
+            data-description="SPDD công thức ColosBaby Gold 0+ 800g (Mới)"
+          >
+            <a
+              href="chi-tiet-san-pham.html?title=SPDD công thức ColosBaby Gold 0+ 800g (Mới)&price=615,924₫&image=../img/colosbaby-gold-0-800g-new.webp&description=SPDD công thức ColosBaby Gold 0+ 800g (Mới)"
+            >
+              <div class="card-img-container">
+                <img
+                  src="../img/colosbaby-gold-0-800g-new.webp"
+                  class="card-img-top"
+                  alt="SPDD công thức ColosBaby Gold 0+ 800g (Mới)"
+                />
+              </div>
+            </a>
+            <div class="card-body">
+              <h5 class="title">SPDD công thức ColosBaby Gold 0+ 800g (Mới)</h5>
+              <p class="hl fw-bold">615,924₫</p>
+              <span class="time-giao">Giao trong 2 giờ</span>
+              <div class="d-flex justify-content-between">
+                <a href="#" class="custom-button add-to-cart">Thêm vào giỏ</a>
+                <a href="#" class="buy-now-button">Mua Ngay</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div
+            class="card"
+            data-title="Sữa bột ColosBaby IQ Gold 0+ 800g"
+            data-price="615,924₫"
+            data-image="../img/colosbaby-iq-gold-0-800g.png"
+            data-description="Sữa bột ColosBaby IQ Gold 0+ 800g, hỗ trợ trí não"
+          >
+            <a
+              href="chi-tiet-san-pham.html?title=Sữa bột ColosBaby IQ Gold 0+ 800g&price=615,924₫&image=../img/colosbaby-iq-gold-0-800g.png&description=Sữa bột ColosBaby IQ Gold 0+ 800g, hỗ trợ trí não"
+            >
+              <div class="card-img-container">
+                <img
+                  src="../img/colosbaby-iq-gold-0-800g.png"
+                  class="card-img-top"
+                  alt="Sữa bột ColosBaby IQ Gold 0+ 800g"
+                />
+              </div>
+            </a>
+            <div class="card-body">
+              <h5 class="title">Sữa bột ColosBaby IQ Gold 0+ 800g</h5>
+              <p class="hl fw-bold">615,924₫</p>
+              <span class="time-giao">Giao trong 2 giờ</span>
+              <div class="d-flex justify-content-between">
+                <a href="#" class="custom-button add-to-cart">Thêm vào giỏ</a>
+                <a href="#" class="buy-now-button">Mua Ngay</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div
+            class="card"
+            data-title="SPDD công thức ColosBaby Gold D3K2 0+ 800g - S"
+            data-price="615,924₫"
+            data-image="../img/colosbaby-gold-d3k2-0-800g.webp"
+            data-description="SPDD công thức ColosBaby Gold D3K2 0+ 800g - S"
+          >
+            <a
+              href="chi-tiet-san-pham.html?title=SPDD công thức ColosBaby Gold D3K2 0+ 800g - S&price=615,924₫&image=../img/colosbaby-gold-d3k2-0-800g.webp&description=SPDD công thức ColosBaby Gold D3K2 0+ 800g - S"
+            >
+              <div class="card-img-container">
+                <img
+                  src="../img/colosbaby-gold-d3k2-0-800g.webp"
+                  class="card-img-top"
+                  alt="SPDD công thức ColosBaby Gold D3K2 0+ 800g - S"
+                />
+              </div>
+            </a>
+            <div class="card-body">
+              <h5 class="title">SPDD công thức ColosBaby Gold D3K2 0+ 800g - S</h5>
+              <p class="hl fw-bold">615,924₫</p>
+              <span class="time-giao">Giao trong 2 giờ</span>
+              <div class="d-flex justify-content-between">
+                <a href="#" class="custom-button add-to-cart">Thêm vào giỏ</a>
+                <a href="#" class="buy-now-button">Mua Ngay</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="row mt-3">
+        <div class="col-md-3">
+          <div
+            class="card"
+            data-title="Sữa bột ColosBaby Bio Gold 0+"
+            data-price="615,924₫"
+            data-image="../img/colosbaby-bio-gold-0.webp"
+            data-description="Sữa bột ColosBaby Bio Gold 0+, hỗ trợ tiêu hóa"
+          >
+            <a
+              href="chi-tiet-san-pham.html?title=Sữa bột ColosBaby Bio Gold 0+&price=615,924₫&image=../img/colosbaby-bio-gold-0.webp&description=Sữa bột ColosBaby Bio Gold 0+, hỗ trợ tiêu hóa"
+            >
+              <div class="card-img-container">
+                <img
+                  src="../img/colosbaby-bio-gold-0.webp"
+                  class="card-img-top"
+                  alt="Sữa bột ColosBaby Bio Gold 0+"
+                />
+              </div>
+            </a>
+            <div class="card-body">
+              <h5 class="title">Sữa bột ColosBaby Bio Gold 0+</h5>
+              <p class="hl fw-bold">615,924₫</p>
+              <span class="time-giao">Giao trong 2 giờ</span>
+              <div class="d-flex justify-content-between">
+                <a href="#" class="custom-button add-to-cart">Thêm vào giỏ</a>
+                <a href="#" class="buy-now-button">Mua Ngay</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div
+            class="card"
+            data-title="SPDD công thức ColosBaby Gold D3K2 1+ 800g - S"
+            data-price="573,696₫"
+            data-image="../img/colosbaby-gold-d3k2-1-800g.webp"
+            data-description="SPDD công thức ColosBaby Gold D3K2 1+ 800g - S"
+          >
+            <a
+              href="chi-tiet-san-pham.html?title=SPDD công thức ColosBaby Gold D3K2 1+ 800g - S&price=573,696₫&image=../img/colosbaby-gold-d3k2-1-800g.webp&description=SPDD công thức ColosBaby Gold D3K2 1+ 800g - S"
+            >
+              <div class="card-img-container">
+                <img
+                  src="../img/colosbaby-gold-d3k2-1-800g.webp"
+                  class="card-img-top"
+                  alt="SPDD công thức ColosBaby Gold D3K2 1+ 800g - S"
+                />
+              </div>
+            </a>
+            <div class="card-body">
+              <h5 class="title">SPDD công thức ColosBaby Gold D3K2 1+ 800g - S</h5>
+              <p class="hl fw-bold">573,696₫</p>
+              <span class="time-giao">Giao trong 2 giờ</span>
+              <div class="d-flex justify-content-between">
+                <a href="#" class="custom-button add-to-cart">Thêm vào giỏ</a>
+                <a href="#" class="buy-now-button">Mua Ngay</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div
+            class="card"
+            data-title="SPDD công thức ColosBaby Gold 1+ 800g (Mới)"
+            data-price="573,696₫"
+            data-image="../img/colosbaby-gold-1-800g-new.webp"
+            data-description="SPDD công thức ColosBaby Gold 1+ 800g (Mới)"
+          >
+            <a
+              href="chi-tiet-san-pham.html?title=SPDD công thức ColosBaby Gold 1+ 800g (Mới)&price=573,696₫&image=../img/colosbaby-gold-1-800g-new.webp&description=SPDD công thức ColosBaby Gold 1+ 800g (Mới)"
+            >
+              <div class="card-img-container">
+                <img
+                  src="../img/colosbaby-gold-1-800g-new.webp"
+                  class="card-img-top"
+                  alt="SPDD công thức ColosBaby Gold 1+ 800g (Mới)"
+                />
+              </div>
+            </a>
+            <div class="card-body">
+              <h5 class="title">SPDD công thức ColosBaby Gold 1+ 800g (Mới)</h5>
+              <p class="hl fw-bold">573,696₫</p>
+              <span class="time-giao">Giao trong 2 giờ</span>
+              <div class="d-flex justify-content-between">
+                <a href="#" class="custom-button add-to-cart">Thêm vào giỏ</a>
+                <a href="#" class="buy-now-button">Mua Ngay</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div
+            class="card"
+            data-title="Sữa bột ColosBaby Gold 2+ 800g"
+            data-price="535,860₫"
+            data-image="../img/colosbaby-gold-2-800g.webp"
+            data-description="Sữa bột ColosBaby Gold 2+ 800g, hỗ trợ tăng trưởng"
+          >
+            <a
+              href="chi-tiet-san-pham.html?title=Sữa bột ColosBaby Gold 2+ 800g&price=535,860₫&image=../img/colosbaby-gold-2-800g.webp&description=Sữa bột ColosBaby Gold 2+ 800g, hỗ trợ tăng trưởng"
+            >
+              <div class="card-img-container">
+                <img
+                  src="../img/colosbaby-gold-2-800g.webp"
+                  class="card-img-top"
+                  alt="Sữa bột ColosBaby Gold 2+ 800g"
+                />
+              </div>
+            </a>
+            <div class="card-body">
+              <h5 class="title">Sữa bột ColosBaby Gold 2+ 800g</h5>
+              <p class="hl fw-bold">535,860₫</p>
+              <span class="time-giao">Giao trong 2 giờ</span>
+              <div class="d-flex justify-content-between">
+                <a href="#" class="custom-button add-to-cart">Thêm vào giỏ</a>
+                <a href="#" class="buy-now-button">Mua Ngay</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="center d-flex justify-content-center">
+        <div class="pagination">
+          <a href="#" class="active">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <span class="dots">...</span>
+          <a href="#">8</a>
+          <a href="#" class="arrow">></a>
+          <a href="#" class="arrow">>></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- Contact Buttons -->
+    <div class="contact-buttons">
+      <a href="tel:+123456789" class="call-button"><i>📞</i> Gọi ngay</a>
+      <a href="#" class="chat-button"><i>💬</i> Chat với chúng tôi</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="inner-wrap">
+          <div class="inner-top">
+            <div class="inner-content">
+              đăng ký ngay để không bỏ lỡ các chương trình của chúng tôi
+            </div>
+            <form
+              class="inner-form"
+              action="#!"
+              method="post"
+              autocomplete="on"
+              target="_blank"
+            >
+              <label for="Email"></label>
+              <input
+                type="email"
+                id="Email"
+                placeholder="Nhập email của bạn..."
+              />
+              <button>Đăng ký ngay</button>
+            </form>
+          </div>
+          <div class="inner-middle">
+            <nav class="inner-link">
+              <ul>
+                <li>
+                  <a
+                    href="#!"
+                    target="_blank"
+                    class="fw-bold fs-5"
+                    style="color: white"
+                    >trang chủ</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="gioi-thieu.html"
+                    target="_blank"
+                    class="fw-bold fs-5"
+                    style="color: white"
+                    >giới thiệu</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#!"
+                    target="_blank"
+                    class="fw-bold fs-5"
+                    style="color: white"
+                    >danh mục</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="tel:03458458800"
+                    target="_blank"
+                    class="fw-bold fs-5"
+                    style="color: white"
+                    >liên hệ</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <nav class="inner-socials">
+              <ul>
+                <li>
+                  <a href="" target="_blank">
+                    <i class="fa-brands fa-facebook fs-2 text-primary"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="" target="_blank">
+                    <i class="fa-brands fa-twitter fs-2 text-primary"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="" target="_blank">
+                    <i class="fa-brands fa-instagram fs-2 text-warning"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="" target="_blank">
+                    <i class="fa-brands fa-youtube fs-2 text-danger"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="inner-bottom">
+            <a
+              href="email:phu100905@gmail.comcom"
+              class="inner-copyright"
+            >
+              @2025 - Bản quyền thuộc về HoKimPhu 
+            </a>
+            <div class="inner-logo">
+              <a href="../index.html">
+                <img src="../img/logo.png" alt="" />
+              </a>
+            </div>
+            <nav class="inner-link">
+              <ul>
+                <li>
+                  <a href="#!" style="color: white">Điều khoảng dịch vụ</a>
+                </li>
+                <li>
+                  <a href="#!" style="color: white">Chính sách bảo mật</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Popup cảnh báo đăng nhập -->
+    <div class="popup-overlay" id="login-popup">
+      <div class="popup-content">
+        <h3>Cần đăng nhập</h3>
+        <p>Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng hoặc đặt món!</p>
+        <button onclick="redirectToLogin()">Đăng nhập ngay</button>
+      </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/san-pham.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const authLink = document.getElementById("auth-link");
+    
+        if (localStorage.getItem("isLoggedIn") === "true") {
+          // Tạo nút đăng xuất thay thế
+          const logoutBtn = document.createElement("button");
+          logoutBtn.textContent = "Đăng xuất";
+          logoutBtn.classList.add("button", "btn-outline-danger", "rounded-pill", "px-3", "py-1");
+          logoutBtn.addEventListener("click", function () {
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "../index.html";
+          });
+    
+          // Thay thế thẻ <a> chứa nút đăng nhập bằng nút đăng xuất
+          authLink.replaceWith(logoutBtn);
+        }
+      });
+    </script>
+    
+  </body>
+</html>

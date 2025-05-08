@@ -1,0 +1,79 @@
+.invoice-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.invoice-container h2 {
+    text-align: center;
+    color: #006400;
+    margin-bottom: 20px;
+}
+.invoice-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.invoice-header img {
+    width: 150px;
+}
+.invoice-details, .customer-info, .product-list, .total-section {
+    margin-bottom: 20px;
+}
+.invoice-details p, .customer-info p {
+    margin: 5px 0;
+    color: #333;
+}
+.invoice-details label, .customer-info label {
+    font-weight: bold;
+    color: #006400;
+}
+.product-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.product-list th, .product-list td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+.product-list th {
+    background-color: #f8f9fa;
+    color: #006400;
+}
+.total-section {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #d9534f;
+}
+.print-button {
+    display: block;
+    width: 150px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #006400;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+.print-button:hover {
+    background-color: #004d00;
+}
+@media print {
+    .print-button, .header, .footer, .infor {
+        display: none;
+    }
+    .invoice-container {
+        margin: 0;
+        border: none;
+        box-shadow: none;
+    }
+}

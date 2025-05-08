@@ -1,0 +1,17 @@
+.product-detail .img-fluid {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+  .product-detail .img-thumbnail {
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+  .product-detail .img-thumbnail:hover {
+    opacity: 0.8;
+  }
+  .product-detail .fw-bold {
+    color: #006400;
+  }
+  .product-detail .text-success {
+    color: #d9534f !important;
+  }
