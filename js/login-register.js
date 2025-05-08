@@ -29,6 +29,90 @@ function showError(fieldId, message) {
   errorElement.style.display = "block";
 }
 
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
+
+function validateNameOnBlur(fieldId, errorMessage) {
+  const field = document.getElementById(fieldId);
+  field.addEventListener("blur", function () {
+    const value = field.value.trim();
+    if (!value) {
+      showError(fieldId, errorMessage);
+    } else if (value !== capitalizeFirstLetter(value)) {
+      showError(fieldId, "Chữ cái đầu phải viết hoa");
+    } else {
+      document.getElementById(`${fieldId}-error`).style.display = "none";
+    }
+  });
+}
+
+function validatePhoneOnBlur() {
+  const field = document.getElementById("phone");
+  field.addEventListener("blur", function () {
+    const value = field.value.trim();
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(value)) {
+      showError("phone", "Số điện thoại phải là 10 chữ số.");
+    } else {
+      document.getElementById("phone-error").style.display = "none";
+    }
+  });
+}
+
+function validateEmailOnBlur() {
+  const field = document.getElementById("email");
+  field.addEventListener("blur", function () {
+    const value = field.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(value)) {
+      showError("email", "Email không hợp lệ.");
+    } else {
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      if (users.some((user) => user.email === value)) {
+        showError("email", "Email này đã được đăng ký.");
+      } else {
+        document.getElementById("email-error").style.display = "none";
+      }
+    }
+  });
+}
+
+function validatePasswordOnBlur() {
+  const field = document.getElementById("password");
+  field.addEventListener("blur", function () {
+    const value = field.value;
+    if (value.length < 6) {
+      showError("password", "Mật khẩu phải có ít nhất 6 ký tự.");
+    } else {
+      document.getElementById("password-error").style.display = "none";
+    }
+  });
+}
+
+function validateConfirmPasswordOnBlur() {
+  const field = document.getElementById("confirm-password");
+  field.addEventListener("blur", function () {
+    const password = document.getElementById("password").value;
+    const value = field.value;
+    if (value !== password) {
+      showError("confirm-password", "Mật khẩu xác nhận không khớp.");
+    } else {
+      document.getElementById("confirm-password-error").style.display = "none";
+    }
+  });
+}
+
+// Add blur event listeners for real-time validation
+document.addEventListener("DOMContentLoaded", function () {
+  validateNameOnBlur("last-name", "Họ không được để trống.");
+  validateNameOnBlur("first-name", "Tên không được để trống.");
+  validatePhoneOnBlur();
+  validateEmailOnBlur();
+  validatePasswordOnBlur();
+  validateConfirmPasswordOnBlur();
+});
+
 document
   .getElementById("register-form")
   .addEventListener("submit", function (e) {
@@ -47,10 +131,16 @@ document
     if (!lastName) {
       showError("last-name", "Họ không được để trống.");
       isValid = false;
+    } else if (lastName !== capitalizeFirstLetter(lastName)) {
+      showError("last-name", "Chữ cái đầu của họ phải viết hoa.");
+      isValid = false;
     }
 
     if (!firstName) {
       showError("first-name", "Tên không được để trống.");
+      isValid = false;
+    } else if (firstName !== capitalizeFirstLetter(firstName)) {
+      showError("first-name", "Chữ cái đầu của tên phải viết hoa.");
       isValid = false;
     }
 
@@ -85,8 +175,8 @@ document
     if (isValid) {
       const users = JSON.parse(localStorage.getItem("users")) || [];
       users.push({
-        lastName,
-        firstName,
+        lastName: capitalizeFirstLetter(lastName),
+        firstName: capitalizeFirstLetter(firstName),
         phone,
         email,
         password,
@@ -132,36 +222,31 @@ document
     }
   });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const loginForm = document.getElementById("login-form");
+  const loginButtonContainer = document.querySelector("a[href='login-register.html']");
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const loginForm = document.getElementById("login-form");
-    const loginButtonContainer = document.querySelector("a[href='login-register.html']");
-    
-    // Hiển thị nút Đăng xuất nếu đã đăng nhập
-    function showLogoutButton() {
-      if (localStorage.getItem("isLoggedIn") === "true") {
-        const logoutBtn = document.createElement("button");
-        logoutBtn.textContent = "Đăng xuất";
-        logoutBtn.classList.add("button", "btn-outline-danger", "rounded-pill", "px-3", "py-1", "ms-2");
-        logoutBtn.addEventListener("click", function () {
-          localStorage.removeItem("isLoggedIn");
-          window.location.reload(); // Tải lại trang
-        });
-        loginButtonContainer.replaceWith(logoutBtn);
-      }
-    }
-
-    // Giả lập đăng nhập thành công
-    if (loginForm) {
-      loginForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        // Ở đây bạn nên xử lý xác thực thực tế, ví dụ gọi API
-        localStorage.setItem("isLoggedIn", "true");
-        alert("Đăng nhập thành công!");
-        window.location.reload();
+  function showLogoutButton() {
+    if (localStorage.getItem("isLoggedIn") === "true") {
+      const logoutBtn = document.createElement("button");
+      logoutBtn.textContent = "Đăng xuất";
+      logoutBtn.classList.add("button", "btn-outline-danger", "rounded-pill", "px-3", "py-1", "ms-2");
+      logoutBtn.addEventListener("click", function () {
+        localStorage.removeItem("isLoggedIn");
+        window.location.reload(); 
       });
+      loginButtonContainer.replaceWith(logoutBtn);
     }
+  }
+  
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      localStorage.setItem("isLoggedIn", "true");
+      alert("Đăng nhập thành công!");
+      window.location.reload();
+    });
+  }
 
-    showLogoutButton();
-  });
-
+  showLogoutButton();
+});
